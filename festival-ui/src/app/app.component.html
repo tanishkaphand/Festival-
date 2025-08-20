@@ -1,0 +1,78 @@
+<header>
+  <h1>🎉 Festival Management System 🎉</h1>
+  <p>Plan, Organize & Celebrate with Ease</p>
+  <button id="toggleTheme" (click)="toggleTheme()">🌙 Toggle Theme</button>
+</header>
+
+<section class="intro card">
+  <h2>🎊 Welcome to the Festival Management Platform in our web</h2>
+  <p>
+    This platform serves as a digital space to organize, monitor, and celebrate festivals in a structured manner.
+    With real-time listings, easy input forms, and planning features, it becomes easier than ever to manage
+    cultural and social events across regions and communities.
+  </p>
+  <p>
+    The Festival Management System is a web application designed to help organize, manage,
+    and promote festivals efficiently. It allows admins to add, update, and track festival
+    details such as name, date, location, and category. Visitors can easily search, filter,
+    and explore events with interactive maps, calendar views, and image galleries.
+    This system streamlines event management, improves coordination, and enhances the
+    overall festival experience.
+  </p>
+</section>
+
+<section class="info card">
+  <h2>✨ Why Choose This System?</h2>
+  <ul>
+    <li>📌 Manage festivals all in one place</li>
+    <li>📅 Track events by date & location</li>
+    <li>🔍 Easy search & filtering (coming soon)</li>
+    <li>📊 Dashboard & analytics (planned)</li>
+    <li>🔔 Smart notifications (future release)</li>
+    <li>🗂️ Past event archive & history</li>
+    <li>💬 Collaborate with event organizers</li>
+  </ul>
+</section>
+
+<section class="features">
+  <h2>🚀 Key Features</h2>
+  <div class="feature-grid">
+    <div class="feature-card card">
+      <h3>🔄 Real-time Updates</h3>
+      <p>Festivals are listed instantly after creation.</p>
+    </div>
+    <div class="feature-card card">
+      <h3>🎯 Simple & Intuitive UI</h3>
+      <p>Even non-technical users can manage festivals easily.</p>
+    </div>
+    <div class="feature-card card">
+      <h3>🛡️ Secure System</h3>
+      <p>Data is validated and managed securely.</p>
+    </div>
+    <div class="feature-card card">
+      <h3>📈 Advanced Analytics</h3>
+      <p>Visual dashboard to track event impact (coming soon).</p>
+    </div>
+  </div>
+</section>
+
+<section class="form-section card">
+  <h2>📝 Add a New Festival</h2>
+  <form (ngSubmit)="onSubmit()" #festivalForm="ngForm">
+    <input type="text" id="name" name="name" [(ngModel)]="newFestival.name" placeholder="Festival Name" required />
+    <input type="text" id="location" name="location" [(ngModel)]="newFestival.location" placeholder="Location" required />
+    <input type="date" id="date" name="date" [(ngModel)]="newFestival.date" required />
+    <button type="submit">Add Festival</button>
+  </form>
+</section>
+
+<section class="list-section card">
+  <h2>📅 Upcoming Festivals</h2>
+  <ul id="festivalList">
+    <li *ngFor="let f of festivals">{{ f.name }} - {{ f.location }} ({{ f.date }})</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Festival Management System | Made with ❤️ to celebrate culture and unity.</p>
+</footer>
